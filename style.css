@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+  --Dark-Green: hsl(156, 42%, 18%);
+
+  --Fraunces: "Fraunces", serif;
+  --Montserrat: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--Cream);
+}
+
+.card {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "content-left content-right";
+  margin: 20px 20px 0;
+  font-family: var(--Fraunces);
+  background-color: var(--White);
+  border-radius: 10px;
+}
+
+.content-left {
+  float: left;
+  max-width: 100%;
+  min-width: 50%;
+  grid-area: content-left;
+  background-image: url(images/image-product-desktop.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.content-right {
+  float: right;
+  max-width: 100%;
+  min-width: 50%;
+  grid-area: content-right;
+  padding: 20px;
+}
+
+p:nth-child(2n + 1) {
+  font-family: var(--Montserrat);
+  color: var(--Dark-grayish-blue);
+  font-size: 14px;
+}
+
+p:nth-child(1) {
+  letter-spacing: 5px;
+  font-size: 11px;
+  margin: 0;
+}
+
+h1 {
+  line-height: 1;
+  font-size: 2rem;
+}
+
+p:nth-child(3) {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.price {
+  color: var(--Dark-cyan);
+  display: flex;
+  font-size: 30px;
+  font-size: 2em;
+}
+
+.price > span {
+  color: var(--Dark-grayish-blue);
+  text-decoration: line-through;
+  font-size: 10px;
+  align-items: center;
+  display: flex;
+  margin-left: 20px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--Dark-cyan);
+  color: var(--White);
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+  font-size: 12px;
+  font-family: var(--Montserrat);
+  width: 100%;
+}
+
+button img {
+  padding-right: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #1a4031;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 375px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px auto;
+    grid-template-areas: "content-left" "content-right";
+  }
+
+  .content-left {
+    background-image: url(images/image-product-mobile.jpg);
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .content-right {
+    padding: 20px;
+  }
+
+  h1 {
+    line-height: 1;
+    font-size: 28px;
+  }
+
+  p:nth-child(3) {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  p.price {
+    margin: 10px;
+  }
+}
